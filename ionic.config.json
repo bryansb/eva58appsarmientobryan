@@ -1,0 +1,7 @@
+{
+  "name": "eva58appsarmientobryan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
