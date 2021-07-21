@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button defaultHref="rental-ads/list">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="!flag">{{titleS}}</ion-title>
+    <ion-title *ngIf="flag">{{titleU}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Titulo: </ion-label>
+    <ion-input [(ngModel)]="rentalAd.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Dirección: </ion-label>
+    <ion-input [(ngModel)]="rentalAd.address"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Precio: </ion-label>
+    <ion-input [(ngModel)]="rentalAd.price" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Contacto: </ion-label>
+    <ion-input [(ngModel)]="rentalAd.phoneContact"></ion-input>
+  </ion-item>
+  <ion-button *ngIf="!flag" color="success" expand="block" (click)="save()">Guardar</ion-button>
+  <ion-button *ngIf="flag" color="success" expand="block" (click)="save()">Actualizar</ion-button>
+  <ion-button *ngIf="flag" color="danger" expand="block" (click)="delete()">Eliminar</ion-button>
+  <ion-button color="secondary" expand="block" (click)="cancel()">Cancelar</ion-button>
+  
+
+</ion-content>
